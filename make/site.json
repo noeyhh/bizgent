@@ -1,0 +1,10 @@
+{
+  "description": "Empowering small business owners with an AI marketing agent, this app streamlines campaign creation, analytics, and store management for effective marketing.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
