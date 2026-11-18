@@ -1,0 +1,232 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import 'tailwindcss';
+
+@font-face { font-family: 'Gothic A1:Bold'; src: url('https://static.figma.com/font/GothicA1-Bold_1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Gothic A1:ExtraBold'; src: url('https://static.figma.com/font/GothicA1-ExtraBold_1') format('woff2'); font-style: normal; font-weight: 800; }
+@font-face { font-family: 'Gothic A1:Medium'; src: url('https://static.figma.com/font/GothicA1-Medium_1') format('woff2'); font-style: normal; font-weight: 500; }
+@font-face { font-family: 'Gothic A1:Regular'; src: url('https://static.figma.com/font/GothicA1-Regular_1') format('woff2'); font-style: normal; font-weight: 400; }
+@font-face { font-family: 'Inter:Extra Bold'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 800; }
+@font-face { font-family: 'Inter:Bold Italic'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: italic; font-weight: 700; }
+@font-face { font-family: 'Noto Sans KR:Black'; src: url('https://static.figma.com/font/NotoSansKR-VF_2') format('woff2'); font-style: normal; font-weight: 900; }
+
+@theme {
+  --color-brand-50: #f3f0ff;
+  --color-brand-100: #e8e4ff;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-mint-50: #f0edff;
+  --color-mint-500: #6d4aff;
+  --color-ink-950: #111827;
+  --font-sans:
+    Pretendard, 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink-950);
+  background: white;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 1180px;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  body:has(.landing-page) {
+    min-width: 320px;
+  }
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@font-face { font-family: 'Inter:Bold'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Inter:Medium'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 500; }
+@font-face { font-family: 'Inter:Regular'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 400; }
+@font-face { font-family: 'Inter:Semi Bold'; src: url('https://static.figma.com/font/Inter_1') format('woff2'); font-style: normal; font-weight: 600; }
+@font-face { font-family: 'Noto Sans KR:Bold'; src: url('https://static.figma.com/font/NotoSansKR-VF_2') format('woff2'); font-style: normal; font-weight: 700; }
+@font-face { font-family: 'Noto Sans KR:Medium'; src: url('https://static.figma.com/font/NotoSansKR-VF_2') format('woff2'); font-style: normal; font-weight: 500; }
+@font-face { font-family: 'Noto Sans KR:Regular'; src: url('https://static.figma.com/font/NotoSansKR-VF_2') format('woff2'); font-style: normal; font-weight: 400; }
+
+/* Design faces: Inter for Latin, Noto Sans KR for Hangul */
+.f-bold { font-family: 'Inter:Bold', 'Noto Sans KR:Bold', sans-serif; font-weight: 700; }
+.f-semibold { font-family: 'Inter:Semi Bold', 'Noto Sans KR:Bold', sans-serif; font-weight: 600; }
+.f-medium { font-family: 'Inter:Medium', 'Noto Sans KR:Medium', sans-serif; font-weight: 500; }
+.f-regular { font-family: 'Inter:Regular', 'Noto Sans KR:Regular', sans-serif; font-weight: 400; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Entry screens (landing, terms popup, login, signup): Pretendard only ---- */
+.pd-scope,
+.pd-scope * {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important;
+}
+.pd-scope :is(h1, h2, .pd-heading) { letter-spacing: -0.02em; }
+.pd-scope :is(button, a, summary, [role="button"]):not(:disabled),
+.pd-scope label:has(input) { cursor: pointer; }
+.pd-scope :is(button, a, input, [tabindex]):focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.entry-editorial :is(button, a, input, [tabindex]):focus-visible {
+  outline-color: #d9643a;
+}
+
+.btn-primary,
+.btn-outline,
+.nav-link,
+.nav-link::after,
+.carousel-arrow,
+.showcase-card,
+.showcase-card img,
+.link-hover {
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+  transition-property: color, background-color, border-color, box-shadow, filter, transform, opacity;
+}
+
+/* Filled buttons: darken, lift 2px, soft shadow; press scales down. */
+.btn-primary:not(:disabled):hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+}
+.btn-primary:not(:disabled):active { transform: scale(0.98); }
+
+/* Outline / white buttons: light blue tint + blue border/text. */
+.btn-outline:not(:disabled):hover {
+  background-color: #f3f0ff;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.btn-outline:not(:disabled):active { transform: scale(0.98); }
+
+/* Header menu: blue text with an underline sliding in from the left. */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: #2563eb;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.nav-link:hover,
+.nav-link:focus-visible { color: #2563eb; }
+.nav-link:hover::after,
+.nav-link:focus-visible::after { transform: scaleX(1); }
+
+.link-hover:hover { color: #2563eb; }
+
+/* Showcase cards: lift 4px, stronger shadow, clipped image zoom. */
+.showcase-card:hover,
+.showcase-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(16, 24, 40, 0.2);
+}
+.showcase-card:hover img,
+.showcase-card:focus-within img { transform: scale(1.03); }
+
+/* Carousel arrows: white background with shadow. */
+.carousel-arrow:hover {
+  background-color: #ffffff;
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.2);
+}
+
+.entry-editorial .btn-primary:not(:disabled):hover {
+  filter: none;
+  background-color: #c4552e;
+  box-shadow: 0 8px 18px rgba(30, 30, 40, 0.12);
+}
+.entry-editorial .btn-primary.bg-\[\#1E1E28\]:not(:disabled):hover {
+  background-color: #31313d;
+}
+.entry-editorial .btn-outline:not(:disabled):hover {
+  background-color: #f4f1ea;
+  border-color: rgba(30, 30, 40, 0.35);
+  color: #1e1e28;
+}
+.entry-editorial .nav-link:hover,
+.entry-editorial .nav-link:focus-visible,
+.entry-editorial .link-hover:hover {
+  color: #d9643a;
+}
+.entry-editorial .nav-link::after {
+  background: #d9643a;
+}
+.entry-editorial .showcase-card:hover,
+.entry-editorial .showcase-card:focus-within {
+  box-shadow: 0 12px 28px rgba(30, 30, 40, 0.12);
+}
+
+/* Shared page header, scoped so screens outside the editorial restyle are untouched. */
+.editorial-app-page nav[aria-label="현재 위치"] a,
+.editorial-app-page nav[aria-label="현재 위치"] > span {
+  color: #6b6a72;
+}
+.editorial-app-page nav[aria-label="현재 위치"] > span:last-child {
+  color: #d9643a;
+}
+.editorial-app-page nav[aria-label="현재 위치"] + div > button:first-child {
+  border: 1px solid rgba(30, 30, 40, 0.15);
+  color: #1e1e28;
+  box-shadow: none;
+}
+.editorial-app-page nav[aria-label="현재 위치"] + div > button:last-child {
+  background: #f1e8da;
+  color: #1e1e28;
+}
+
+/* Dark surfaces always expose a white currentColor for labels and line icons. */
+[class~="bg-[#1E1E28]"],
+[class~="bg-[#172033]"],
+[class~="bg-[#1f2937]"] {
+  color: #ffffff !important;
+}
+:is(button, [role="button"], [role="tab"])[class~="bg-[#1E1E28]"] img,
+:is(button, [role="button"], [role="tab"])[class~="bg-[#172033]"] img,
+:is(button, [role="button"], [role="tab"])[class~="bg-[#1f2937]"] img,
+[class~="bg-[#1E1E28]"] > img,
+[class~="bg-[#172033]"] > img,
+[class~="bg-[#1f2937]"] > img {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:not(:disabled):hover,
+  .btn-primary:not(:disabled):active,
+  .btn-outline:not(:disabled):active,
+  .showcase-card:hover,
+  .showcase-card:focus-within,
+  .showcase-card:hover img,
+  .showcase-card:focus-within img {
+    transform: none;
+  }
+  .nav-link::after { transition: none; }
+}
