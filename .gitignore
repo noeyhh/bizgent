@@ -1,0 +1,21 @@
+# 설치된 라이브러리
+node_modules/
+
+# 빌드 결과물
+dist/
+
+# 압축 파일
+*.zip
+
+# 비밀정보 설정 파일
+.env
+.env.local
+
+# 로그
+*.log
+
+# 에디터·OS 자동 생성 파일
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
